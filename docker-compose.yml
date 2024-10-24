@@ -1,0 +1,15 @@
+version: "3.9"
+
+services:
+  develop-plan:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    image: spring-boot:latest
+    container_name: spring-boot
+    ports:
+      - 8080:8080
+
+networks:
+  default:
+    name: backend

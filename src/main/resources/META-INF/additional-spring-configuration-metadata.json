@@ -1,0 +1,22 @@
+{"properties": [
+  {
+    "name": "ldap.url",
+    "type": "java.lang.String",
+    "description": "A description for 'ldap.url'"
+  },
+  {
+    "name": "ldap.base",
+    "type": "java.lang.String",
+    "description": "A description for 'ldap.base'"
+  },
+  {
+    "name": "ldap.bind.dn",
+    "type": "java.lang.String",
+    "description": "A description for 'ldap.bind.dn'"
+  },
+  {
+    "name": "ldap.bind.password",
+    "type": "java.lang.String",
+    "description": "A description for 'ldap.bind.password'"
+  }
+]}
