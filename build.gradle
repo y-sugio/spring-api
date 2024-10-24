@@ -22,21 +22,42 @@ repositories {
 }
 
 dependencies {
+	// spring基本セット
 	implementation 'org.springframework.boot:spring-boot-starter-jdbc'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.boot:spring-boot-starter-data-jdbc'
-//	implementation 'org.springframework.boot:spring-boot-starter-validation'
-//	implementation "org.springframework.boot:spring-boot-starter-security"
+	implementation 'org.springframework.boot:spring-boot-starter-validation'
+	implementation "org.springframework.boot:spring-boot-starter-security"
+
+	// ldapのために追加
     implementation 'org.springframework.ldap:spring-ldap-core'
     implementation 'org.springframework.security:spring-security-ldap'
-	runtimeOnly 'com.oracle.database.jdbc:ojdbc11'
-	runtimeOnly 'com.h2database:h2'
-	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 
+	// トークン認証のため追加
+	implementation 'io.jsonwebtoken:jjwt:0.9.1'
+
+	// pdfのために追加
+	implementation 'com.openhtmltopdf:openhtmltopdf-core:1.0.10'
+	implementation 'com.openhtmltopdf:openhtmltopdf-pdfbox:1.0.10'
+	implementation 'com.lowagie:itext:2.1.7'
+
+	// oracle利用のため追加
+	runtimeOnly 'com.oracle.database.jdbc:ojdbc11'
+
+	// インメモリDBのために追加
+	runtimeOnly 'com.h2database:h2'
+
+	// テストのため追加
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation 'org.springframework.security:spring-security-test'
+
+	// lombok利用のため追加
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
 
+	// インメモリldapサーバのために追加
     developmentOnly 'com.unboundid:unboundid-ldapsdk'
+
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 }
 
