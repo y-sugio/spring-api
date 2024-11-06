@@ -1,7 +1,7 @@
 plugins {
 	id 'java'
-	id 'org.springframework.boot' version '3.2.2'
-	id 'io.spring.dependency-management' version '1.1.4'
+	id 'org.springframework.boot' version '3.3.5'
+	id 'io.spring.dependency-management' version '1.1.6'
 }
 
 group = 'com.example'
@@ -34,7 +34,13 @@ dependencies {
     implementation 'org.springframework.security:spring-security-ldap'
 
 	// トークン認証のため追加
-	implementation 'io.jsonwebtoken:jjwt:0.9.1'
+	implementation 'io.jsonwebtoken:jjwt-api:0.11.5'
+	runtimeOnly 'io.jsonwebtoken:jjwt-impl:0.11.5'
+	runtimeOnly 'io.jsonwebtoken:jjwt-jackson:0.11.5'
+
+	// APIのパフォーマンス監視のため
+	implementation 'io.micrometer:micrometer-core'
+    implementation 'io.micrometer:micrometer-observation'
 
 	// pdfのために追加
 	implementation 'com.openhtmltopdf:openhtmltopdf-core:1.0.10'
@@ -56,7 +62,7 @@ dependencies {
 	annotationProcessor 'org.projectlombok:lombok'
 
 	// インメモリldapサーバのために追加
-    developmentOnly 'com.unboundid:unboundid-ldapsdk'
+    implementation 'com.unboundid:unboundid-ldapsdk'
 
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 }

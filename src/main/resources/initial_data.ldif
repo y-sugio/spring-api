@@ -1,23 +1,71 @@
-dn: dc=example,dc=com
+# COOPドメインの情報
+dn: dc=coop,dc=com
 objectClass: top
 objectClass: domain
-dc: example
+dc: coop
 
-dn: ou=people,dc=example,dc=com
-objectClass: top
-objectClass: organizationalUnit
-ou: people
-
-dn: cn=John Doe,ou=people,dc=example,dc=com
+# COOPドメインの管理者ユーザー1
+dn: cn=admin1,dc=coop,dc=com
 objectClass: top
 objectClass: person
+objectClass: organizationalPerson
 objectClass: inetOrgPerson
-cn: John Doe
-sn: Doe
-uid: jdoe
+cn: admin1
+sn: admin1
 userPassword: password
 
-dn: ou=groups,dc=example,dc=com
+# COOPドメインの管理者ユーザー2
+dn: cn=admin2,dc=coop,dc=com
 objectClass: top
-objectClass: organizationalUnit
-ou: groups
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+cn: admin2
+sn: admin2
+userPassword: password
+
+# COOPドメインの一般ユーザー
+dn: cn=user1,dc=coop,dc=com
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+cn: user1
+sn: user1
+userPassword: userpassword
+
+# NSSドメインの情報
+dn: dc=nss,dc=com
+objectClass: top
+objectClass: domain
+dc: nss
+
+# NSSドメインの管理者ユーザー1
+dn: cn=admin1,dc=nss,dc=com
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+cn: admin1
+sn: admin1
+userPassword: password
+
+# NSSドメインの管理者ユーザー2
+dn: cn=admin2,dc=nss,dc=com
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+cn: admin2
+sn: admin2
+userPassword: password
+
+# NSSドメインの一般ユーザー
+dn: cn=user1,dc=nss,dc=com
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+cn: user1
+sn: user1
+userPassword: userpassword
